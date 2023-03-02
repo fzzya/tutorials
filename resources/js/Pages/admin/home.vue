@@ -1,7 +1,10 @@
 <template>
-    <div class="mx-10 my-5">
+    <!-- <div class="mx-10 my-5">
       <v-btn variant="flat" color="blue"  @click="tableToExcel('table', 'Lorem Table')">Download</v-btn>
-    </div>
+    </div> -->
+    <div id="app" ref="document">
+    <div id="element-to-convert">
+     <button style="background-color:bisque; border-radius:5px;" class="me-10 ms-10"  @click="exportToPDF">Download</button>
     <v-table class="mx-10 my-5">
       <thead class="bg-grey">
         <tr>
@@ -85,11 +88,15 @@
         </tbody>
       </table>
     </div>
+
+    </div>
+  </div>
 </template>
 
       <script>
   import { router } from "@inertiajs/core";
   import layoutVue from "../../layout/layout.vue";
+  import html2pdf from "html2pdf.js";
 
   export default {
     layout:layoutVue,
@@ -115,7 +122,7 @@
         },
       };
     },
-
+    name: 'app',
     methods: {
       openProses($id) {
         this.id_pengaduan = $id;
@@ -159,12 +166,15 @@
           },
         });
       },
-      tableToExcel(table, name) {
-        if (!table.nodeType) table = this.$refs.table;
-        var ctx = { worksheet: name || "Worksheet", table: table.innerHTML };
-        window.location.href =
-          this.uri + this.base64(this.format(this.template, ctx));
-      },
+    //   tableToExcel(table, name) {
+    //     if (!table.nodeType) table = this.$refs.table;
+    //     var ctx = { worksheet: name || "Worksheet", table: table.innerHTML };
+    //     window.location.href =
+    //       this.uri + this.base64(this.format(this.template, ctx));
+    //   },
+    exportToPDF() {
+			html2pdf(document.getElementById('element-to-convert'));
+		},
     },
   };
   </script>

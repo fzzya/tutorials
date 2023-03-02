@@ -49,14 +49,14 @@
       </v-list>
     </v-navigation-drawer>
 
-    <!-- <v-app-bar>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-app-bar style="background-color:blueviolet">
+      <v-app-bar-nav-icon @click="drawer = !drawer">Faizah</v-app-bar-nav-icon>
       <v-toolbar-title>{{ user.level }}</v-toolbar-title>
-      <v-spacer/>
-      <v-btn @click="logout">Log out</v-btn>
-    </v-app-bar> -->
+      <!-- <v-spacer/> -->
 
-    <v-system-bar class="bg-blue">
+    </v-app-bar>
+
+    <!-- <v-system-bar class="bg-blue">
         <v-spacer></v-spacer>
         <v-tooltip text="Logout">
           <template v-slot:activator="{ props }">
@@ -65,7 +65,7 @@
             >
           </template>
         </v-tooltip>
-      </v-system-bar>
+      </v-system-bar> -->
 
     <v-main>
       <v-container>

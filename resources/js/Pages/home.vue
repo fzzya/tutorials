@@ -1,19 +1,23 @@
 <template>
   <v-app>
+    <v-parallax src="https://cdn.pixabay.com/photo/2023/02/08/08/50/frequency-wave-7776034_1280.jpg">
     <v-main>
-      <div class="d-flex justify-center">
-        <v-card elevation="2" width="400" height="500" class="mt-15">
+      <div class="d-flex justify-center" >
+        <v-card elevation="2" width="400" height="500" class="mt-15" >
           <div class="text-center mt-5">
             <span>Log in</span>
           </div>
+          <v-divider/>
           <v-card-text>
             <v-form>
               <v-text-field
+                prepend-icon="mdi-account-circle"
                 label="Username"
                 v-model="form.username"
                 :error-messages="errors.username"
               ></v-text-field>
               <v-text-field
+                prepend-icon="mdi-lock"
                 label="Password"
                 type="password"
                 v-model="form.password"
@@ -28,6 +32,7 @@
         </v-card>
       </div>
     </v-main>
+    </v-parallax>
   </v-app>
 </template>
 
@@ -41,7 +46,7 @@ export default {
     return {
       form: {
         username: "",
-        password: "",
+        password: ""
       },
     };
   },
@@ -50,6 +55,9 @@ export default {
     login() {
       router.post("/login", this.form);
     },
+    // handleclick() {
+    //     this.showPassword = !this.showPassword
+    // },
     register() {
       router.get("/register");
     },

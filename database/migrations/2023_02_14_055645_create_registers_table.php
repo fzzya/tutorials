@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama');
             $table->char('nik', 16);
             $table->string('tlp');
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('password');
             $table->timestamps();
         });

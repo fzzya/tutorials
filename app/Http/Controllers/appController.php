@@ -31,13 +31,14 @@ class appController extends Controller
             'nama'=>'required',
             'nik'=>'required',
             'tlp'=>'required',
-            'username'=>'required',
+            'username'=>'required|unique:users',
             'password'=>'required',
         ],[
             'nama.required'=>'nama wajib diisi',
             'nik.required'=>'nik wajib diisi',
             'tlp.required'=>'nomor wajib diisi',
             'username.required'=>'username wajib diisi',
+            'username.unique'=>"Username tidak boleh pasaran",
             'password.required'=>'password wajib diisi',
         ]);
         register::create([

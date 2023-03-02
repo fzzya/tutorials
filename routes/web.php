@@ -4,7 +4,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\petugasController;
 use App\Http\Controllers\masyarakatController;
 use App\Http\Controllers\appController;
-use App\Http\Controllers\logicController;
+use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,10 +50,10 @@ Route::group(['middleware' => ['auth','role:masyarakat']], function(){
 });
 
 Route::get('/',[appController::class,'show'])->name('login');
-Route::post('/login',[logicController::class,'login']);
+Route::post('/login',[loginController::class,'login']);
 
 Route::get('/about',[appController::class,'rpl']);
 Route::get('/register',[appController::class,'register']);
-Route::get('/logout',[logicController::class,'logout']);
+Route::get('/logout',[loginController::class,'logout']);
 Route::post('/register',[appController::class,'registerPost']);
-Route::get('/logout',[logicController::class,'logout']);
+Route::get('/logout',[loginController::class,'logout']);

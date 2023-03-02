@@ -31,7 +31,7 @@ class adminController extends Controller
     {
         $request->validate([
            'nama'=>'required',
-           'username'=>'required',
+           'username'=>'required|unique:users',
            'password'=>'required',
            'level'=>'required',
            'tlp'=>'required',

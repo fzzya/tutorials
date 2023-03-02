@@ -1,11 +1,13 @@
 <template>
   <v-app>
+    <v-parallax src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg">
     <v-main>
       <div class="d-flex justify-center">
         <v-card elevation="2" width="500" height="550" class="mt-15">
           <div class="text-center mt-5">
             <span>Register</span>
           </div>
+          <v-divider/>
           <v-card-text>
             <v-form>
               <v-text-field
@@ -43,6 +45,7 @@
         </v-card>
       </div>
     </v-main>
+    </v-parallax>
   </v-app>
 </template>
 

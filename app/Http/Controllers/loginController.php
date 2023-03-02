@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
-class logicController extends Controller
+class loginController extends Controller
 {
     public function login(request $request){
         $request->validate([
@@ -39,5 +39,4 @@ class logicController extends Controller
         return redirect('/');
     }
 
-    //
 }

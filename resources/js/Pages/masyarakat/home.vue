@@ -1,4 +1,6 @@
 <template>
+    <v-app>
+    <v-parallax src="https://cdn.pixabay.com/photo/2023/02/08/08/50/frequency-wave-7776034_1280.jpg">
   <div class="d-flex justify-center">
     <v-card class="my-3" width="50%" v-if="datas.length">
       <v-card-text>
@@ -39,6 +41,8 @@
       </v-card-text>
     </v-card>
   </div>
+</v-parallax>
+</v-app>
 </template>
 
 <script>
